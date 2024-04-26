@@ -1,0 +1,21 @@
+
+
+    <form [formGroup]="checkoutForm">
+    <div class="flex flex-column gap-2 font1 text-success pb-3 align-items-center ">
+      <h2>Richiedi un preventivo gratuito!</h2>
+     
+      <span class="font-bold block mb-2">Nome e Cognome</span>
+      <input pInputText placeholder="Mario Rossi" aria-describedby="username-help" class="inputbox" id="" type="" formControlName="nome"/>
+      
+      <span class="font-bold block mb-2">Phone</span>
+      <input pInputText placeholder="+39" aria-describedby="username-help" class="inputbox" formControlName="telefono"/>
+      
+      <span class="font-bold block mb-2">E-mail</span>
+      <input pInputText placeholder="mariorossi@hotmail.it" aria-describedby="username-help" class="inputbox" formControlName="email"/>
+    </div>
+    
+  </form>
+    <p-button (click)="prova()" [disabled]="" label="Invia e ti ricontatteremo noi!" severity="success"></p-button>
+
+
+   
