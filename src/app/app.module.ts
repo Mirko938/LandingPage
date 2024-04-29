@@ -14,6 +14,7 @@ import { FormServiceService } from './form-service.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FloatLabelModule } from 'primeng/floatlabel';
+import { CarouselComponent } from './carousel/carousel.component';
 
 
 @NgModule ({
@@ -21,7 +22,7 @@ import { FloatLabelModule } from 'primeng/floatlabel';
     imports: [MessagesModule, ButtonModule, ToastModule, CardModule, 
         InputTextModule, BrowserModule, BrowserAnimationsModule, 
         MessageModule, AppRoutingModule, InputMaskModule, 
-        ReactiveFormsModule, HttpClientModule, FloatLabelModule],
+        ReactiveFormsModule, HttpClientModule, FloatLabelModule, CarouselComponent],
     bootstrap: [AppComponent],
     providers: [FormServiceService]})
 
