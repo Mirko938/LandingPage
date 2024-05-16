@@ -15,15 +15,34 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { CarouselComponent } from './carousel/carousel.component';
+import { CarouselModule } from 'primeng/carousel';
+import { HeaderComponent } from './header/header.component';
+import { CommonModule, NgFor } from '@angular/common';
 
 
-@NgModule ({
-    declarations:[AppComponent],
-    imports: [MessagesModule, ButtonModule, ToastModule, CardModule, 
-        InputTextModule, BrowserModule, BrowserAnimationsModule, 
-        MessageModule, AppRoutingModule, InputMaskModule, 
-        ReactiveFormsModule, HttpClientModule, FloatLabelModule, CarouselComponent],
-    bootstrap: [AppComponent],
-    providers: [FormServiceService]})
-
+@NgModule({
+  declarations: [AppComponent],
+  imports: [
+    MessagesModule,
+    ButtonModule,
+    ToastModule,
+    CardModule,
+    InputTextModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    MessageModule,
+    AppRoutingModule,
+    InputMaskModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    FloatLabelModule,
+    CarouselComponent,
+    CarouselModule,
+    HeaderComponent,
+    CommonModule,
+    NgFor,
+  ],
+  bootstrap: [AppComponent],
+  providers: [FormServiceService],
+})
 export class AppModule {}

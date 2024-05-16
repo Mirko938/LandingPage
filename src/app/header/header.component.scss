@@ -1,0 +1,22 @@
+.navbarPosition {
+    z-index: 100;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    background-color:#b5f3bf;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.button {
+    border-radius: 1ch;
+}
+
+.logo {
+    display: inline;
+    height: 70%;
+    max-height: 70px;
+    cursor: pointer;
+}

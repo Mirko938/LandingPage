@@ -1,0 +1,113 @@
+<div class="row pb-5 overflow" style="max-height: 5em; height: 100%">
+  <app-header></app-header>
+</div>
+<div class="row pt-5 overflow">
+  <div class="col-md-12 text-center align-items-center ms-2 overflow">
+    <nav class="navbar navbar-light bg-light mt-5 me-2">
+      <input
+        class="form-control mr-ms-2"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+        id="input"
+        [(ngModel)]="searchText"
+      />
+    </nav>
+    <table class="table text-center" id="table">
+      <thead>
+        <tr>
+          <th class="ps-4">Id</th>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>E-mail</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let lead of table | search : searchText">
+          <td class="ps-4">{{ lead.id }}</td>
+          <td>{{ lead.nome }}</td>
+          <td>{{ lead.telefono }}</td>
+          <td>{{ lead.email }}</td>
+          <td>
+            <button
+              data-bs-toggle="modal"
+              data-bs-target="#modal2"
+              data-bs-whatever=""
+              pButton
+              pRipple
+              (click)="leadSelezionato(lead.id)"
+              class="p-button-rounded p-button-success mr-2 button"
+            >
+              <i class="fa fa-refresh"></i>
+            </button>
+            <button
+              pButton
+              pRipple
+              class="p-button-rounded p-button-danger button"
+              (click)="delete(lead.id)"
+            >
+              <i class="fa fa-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="modal2"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Lead modifing</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      <div class="modal-body">
+        <form [formGroup]="leadForm">
+          @for (item of items; track $index) {
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">{{
+              item.label
+            }}</label>
+            <input
+              type="text"
+              class="form-control"
+              id="recipient-name"
+              [formControlName]="item.control"
+            />
+          </div>
+          }
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          [disabled]="!leadForm.valid"
+          data-bs-dismiss="modal"
+          (click)="update()"
+        >
+          Confirm
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

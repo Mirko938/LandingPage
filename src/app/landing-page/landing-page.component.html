@@ -1,50 +1,51 @@
-
-
-<!-- se voglio utilizzare la componente form devo creare un tag con il selettore di questo componente che di default si chiama sempre app-il 
-nome della componente, nel seguente modo: -->
-
-
-<div class="responsiveBack">
-    <div class="row g-0 text-center">
-      <div class="col-xs-4 col-md-4 pt-3">
-        <img class="max-height" src="../assets/Image/MR.K.png" />
-      </div>
-      <div class="col-xs-8 col-md-8 text-center">
-        <h1 class="font1 text-success pt-3 responsiveFont">
-          <b>La ricerca nel rispetto dell'ambiente</b>
-        </h1>
-        <div class="text-right col-md-9"><img class="max-height"  src="../assets/Image/foglia.png"></div>
-      </div>
+<div class="card responsiveBack body">
+  <div class="row" style="max-height: 1em; height: 100%"></div>
+  <div class="row max-height">
+    <div class="col-xs-2 col-md-2 col-xl-2 text-center t1">
+      <img class="max-height" src="../assets/Image/logo1.png" />
     </div>
-  
-    <div class="row text-center">
-      <div class="col-xs-1 col-md-1"></div>
-      <div class="col-xs-4 col-md-4">
+    <div class="col-xs-12 col-md-10 col-xl-8 text-right">
+      <h1 class="font1 pt-1 responsiveFont1 t2">
+        <b>If research loves environment</b>
+      </h1>
+      <br />
+      <h2 class="font2 responsiveFont2 t2">
+        Compile form and choose our products!
+      </h2>
+    </div>
+  </div>
+
+  <div class="row text-center pt-5">
+    <div class="col-xs-1 col-md-1 col-xl-1"></div>
+    <div
+      class="col-xs-4 col-md-4 col-xl-4 card-img-top list t1"
+      style="width: 45rem; border: 0ch"
+    >
       <!-- <app-carousel></app-carousel> -->
-        <ul class="list-group list-group-flush list-group-item pt-5 list font1" style=" font-size: x-large;">
+      <img
+        src="/assets/Image/chemistry2.png"
+        class="card-img-top"
+        style="border-radius: 5ch"
+      />
+      <h1 class="card-title font3"><b>Your health is in your hands</b></h1>
+      <div class="card-body">
+       
+
+        <ul class="list-group list-group-flush list font4">
+          @for (item of list; track $index) {
           <li class="list-group-item list1">
-            <span class="material-symbols-outlined pe-2"> call </span>Consulenza
-            gratuita
+            <span class="material-symbols-outlined pe-2">
+              {{ item.symbol }}
+            </span>
+            {{ item.text }}
           </li>
-          <li class="list-group-item list1">
-            <span class="material-symbols-outlined pe-2"> science </span>Vetreria
-            da laboratorio
-          </li>
-          <li class="list-group-item list1">
-            <span class="material-symbols-outlined pe-2"> manufacturing </span>
-            Strumentazione
-          </li>
-          <li class="list-group-item list1">
-            <span class="material-symbols-outlined pe-2"> compost </span> Materie
-            prime
-          </li>
+          }
         </ul>
       </div>
-      <div class="col-xs-1 col-md-1">
-      </div>
-      <div class="col-xs-6 col-md-6">
-        <app-form [figlio]="figlio" (infoOutput)="risposta()"></app-form> 
-      </div>
     </div>
 
-    
+    <div class="col-xs-7 col-md-7 col-xl-6">
+      <app-form [figlio]="figlio" (infoOutput)="risposta()"></app-form>
+    </div>
+  </div>
+</div>
