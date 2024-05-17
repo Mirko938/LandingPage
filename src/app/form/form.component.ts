@@ -46,7 +46,7 @@ export class FormComponent implements OnInit {
 
   submittedValue: any;
 
-  checkoutForm: FormGroup = this.ciccioBuilder.group({
+  checkoutForm: FormGroup = this.formConstructor.group({
     nome: new FormControl(null, [Validators.required, Validators.minLength(5)]),
     telefono: new FormControl(null, [
       Validators.required,
@@ -54,13 +54,6 @@ export class FormComponent implements OnInit {
     ]),
     email: new FormControl(null, [Validators.required, Validators.email]),
     checkedBox: new FormControl(false, mustBecheckedValidator()),
-    // 'api-key-mc':
-    //   '0GkdEpGLdCzMwiBMcx7sL3jdEMGVocS1ebxtteMy1LS1J7PHse4IdEdUUX8TUueg',
-    // sezione: 'Lavora con noi',
-    // figlio: {
-    //   nome: 'Luigi',
-
-    // }
   });
 
 
@@ -83,18 +76,17 @@ export class FormComponent implements OnInit {
   ];
 
   constructor(
-    private ciccioBuilder: FormBuilder,
-    private ciccioService: FormServiceService
+    private formConstructor: FormBuilder,
+    private formService: FormServiceService
   ) {
-    console.log('Costruttore!');
+
   }
 
   ngOnInit(): void {
-    console.log('Ciao a padre!');
     this.infoOutput.emit('Ciao padre!');
   }
   subscribe(): void {
-    this.ciccioService.insertLead(this.checkoutForm.value).subscribe();
+    this.formService.insertLead(this.checkoutForm.value).subscribe();
     this.checkoutForm.reset();
     const modal = document.getElementById('modal1');
     if (modal != null) {

@@ -76,7 +76,6 @@ export class LeadComponent implements OnInit {
   ngOnInit(): void {
     this.leadService.obtainLead().subscribe((response) => {
       this.table = response;
-      console.log(this.table);
     });
   }
 
@@ -87,14 +86,10 @@ export class LeadComponent implements OnInit {
   }
 
   leadSelezionato(id: number): void {
-    console.log(id);
     this.idSelezionato = id;
-    console.log(this.idSelezionato);
   }
 
   update(): void {
-    console.log(this.idSelezionato);
-    console.log(this.leadForm.value);
     this.leadService
       .updateLead(this.idSelezionato, this.leadForm.value)
       .subscribe();

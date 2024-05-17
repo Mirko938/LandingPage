@@ -20,15 +20,6 @@ import { HeaderComponent } from '../header/header.component';
   ],
 })
 export class LandingPageComponent {
-  figlio: Figlio = {
-    nome: 'Mirko',
-    cognome: 'Rossi',
-    email: 'mirkorossi@gmail.com',
-  };
-  risposta() {
-    console.log('Ciao figlio!');
-  }
-
   list = [
     {
       symbol: 'compost',
@@ -41,10 +32,6 @@ export class LandingPageComponent {
     {
       symbol: 'manufacturing',
       text: 'Good practeces to reduce carbon footprint',
-    },
-    {
-      symbol: 'call',
-      text: 'Have a free advice!',
     },
   ];
 }

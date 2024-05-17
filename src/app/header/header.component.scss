@@ -1,22 +1,22 @@
 .navbarPosition {
-    z-index: 100;
-    position: fixed;
-    top: 0px;
-    width: 100%;
-    background-color:#b5f3bf;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
-
-.button {
-    border-radius: 1ch;
+  z-index: 100;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  background-color: rgb(201, 224, 244);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo {
-    display: inline;
-    height: 70%;
-    max-height: 70px;
-    cursor: pointer;
+  display: inline;
+  height: 70%;
+  max-height: 70px;
+  cursor: pointer;
+}
+.font6 {
+  font-family: "fantasy";
+  font-size: 20px;
+  cursor: pointer;
 }

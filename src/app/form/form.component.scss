@@ -1,26 +1,54 @@
+@media (min-width: 601px) {
+  .responsiveForm {
+    width: 80ch;
+    height: 8ch;
+  }
+}
+@media (min-width: 300px) and (max-width: 600px) {
+  .responsiveForm {
+    width: 70%;
+  }
+}
+@media (min-height: 1000px) {
+  .responsiveForm1 {
+    width: 80ch;
+    height: 7ch;
+    font-size: 15px;
+  }
+}
+@media (min-height: 300px) and (max-height: 999px) {
+  .responsiveForm1 {
+    width: 50%;
+  }
+}
+@media (min-height: 1000px) {
+  .responsiveFont3 {
+    font-size: 20px;
+  }
+}
 
-    @media (min-width: 601px) {
-        .responsiveForm {
-          width: 50ch;
-          
-        }
-      }
-      @media (min-width: 300px) and (max-width: 600px) {
-        .responsiveForm {
-            width: 30ch;
-        }
-      }
-      .font1 {
-        font-family: 'fantasy';
-        font-size: 3vh;
-      }
-      .formButton {
-        border-color: black
-      }
+.font1 {
+  font-size: 17px;
+  text-align: center;
+}
+.inputForm {
+  border-width: 3px;
+  border-color: #b6bab5;
+}
 
-      //Font
+.formButton {
+  width: 350px;
+  height: 70px;
+  font-size: 130%;
+  background-color: darkblue;
+  border-color: #7f817e;
+  border-width: 4px;
+}
+.checkbox {
+  font-size: 3rem;
+}
+
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
-
 
 //Animations
 @keyframes fade-in {
@@ -33,7 +61,7 @@
 }
 
 @keyframes slide-in {
-   0% {
+  0% {
     top: -300px;
   }
   100% {
@@ -42,16 +70,16 @@
 }
 
 @keyframes scaleDown {
-    0% {
+  0% {
     transform: scale(1);
   }
-   10% {
+  10% {
     transform: scale(0.7);
   }
-   95% {
+  95% {
     transform: scale(0.7);
   }
-   100% {
+  100% {
     transform: scale(1);
   }
 }
@@ -71,10 +99,8 @@
   }
 }
 
-  .t3 { 
- 
-   
-   position: relative;
-   animation: fade-in 6s ease;
-   -webkit-animation: fade-in 6s ease;
-  }
+.t3 {
+  position: relative;
+  animation: fade-in 3s ease, slide-in 3s ease;
+  -webkit-animation: fade-in 3s ease, slide-in 3s ease;
+}

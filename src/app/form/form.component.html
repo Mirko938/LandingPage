@@ -1,17 +1,17 @@
 <form
   [formGroup]="checkoutForm"
-  class="t3 pb-5"
+  class="t3 pb-5 ps-5"
   id="form"
   (submit)="onSubmit()"
 >
-  <div class="flex flex-column gap-4 font1 align-items-center">
+  <div class="flex flex-column gap-3 font1 text-left">
     @for (item of items; track item) {
-    <span class="font-bold block">{{ item.label }}</span>
+    <span class="font-bold block responsiveFont3">{{ item.label }}</span>
     <input
       pInputText
       [placeholder]="item.nome"
       aria-describedby="username-help"
-      class="inputbox responsiveForm"
+      class="inputForm responsiveForm responsiveForm1"
       [formControlName]="item.control"
     />
     }
@@ -30,11 +30,11 @@
     </div>
     <button
       pButton
-      class="button"
+      class="button formButton"
       data-toggle="modal"
       data-target=".bd-example-modal-lg"
       (click)="subscribe()"
-      label="Click and we contact you!"
+      label="Submit and we contact you!"
       severity="danger"
       [disabled]="!checkoutForm.valid"
     ></button>

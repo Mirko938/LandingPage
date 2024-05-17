@@ -19,8 +19,6 @@ export class FormServiceService {
   }
   searchLead(id: number): Observable<any> {
     return this.httpClient.get(`http://localhost:3000/lead/${id}`);
-
- 
   }
   updateLead(id: number, data: any): Observable<any> {
     return this.httpClient.patch(`http://localhost:3000/lead/${id}`, data);

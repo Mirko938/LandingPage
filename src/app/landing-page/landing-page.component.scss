@@ -1,111 +1,135 @@
 .material-symbols-outlined {
-    font-variation-settings:
-    'FILL' 0,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 24
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+@media (min-height: 600px) {
+  .responsiveList {
+    gap: 2vh;
   }
-  .max-height {
-      height: 100%;
-      max-height: 13rem;
-      width: auto;}
+}
 
-  
-      .font1 {
-          font-family: 'fantasy';
-        
-        
-   
-        }
-        .font2 {
-          font-family: 'fantasy';
-          text-decoration: overline;
-        
-   
-        }
+.logo {
+  max-height: 8rem;
+  vertical-align: middle;
+}
+.logo1 {
+  vertical-align: middle;
+}
 
-        .font3 {
-          font-family: 'fantasy';
-          font-size: 30px;
-        }
-        .font4 {
-          font-family: 'fantasy';
-          font-size: 140px;
-        }
-  
+.font1 {
+  font-family: "fantasy";
+  font-size: 100px;
+}
+.font2 {
+  font-family: "fantasy";
+  text-decoration: overline;
+  font-size: 50px;
+}
 
-      .list{
-      
-        // background-color: #e3fae7;
-        // background-image: linear-gradient(to left, rgba(255,0,0,0), #e3fae7);
-        background-image:none;
-        background-color: transparent;
-      }
-      .list1{
-        border-bottom: none !important;
-        // background-color: #e3fae7;
-        background-image:none;
-        background-color: transparent;
-        font-size: 20%;
-      }
-       
-  
-    
-      
-      /* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
+.font3 {
+  font-family: "fantasy";
+  font-size: 35px;
+}
+.font4 {
+  font-family: "fantasy";
+  font-size: 140px;
+}
+.font6 {
+  font-family: "fantasy";
+  font-size: 20px;
+}
+.font7 {
+  font-family: "fantasy";
+  font-size: 35px;
+}
+
+.list {
+  background-image: none;
+  background-color: transparent;
+}
+.list1 {
+  border-bottom: none !important;
+  background-image: none;
+  background-color: transparent;
+  font-size: 25px;
+}
+
 @media screen and (min-width: 601px) {
   .responsiveFont1 {
-    font-size: 75px;
+    font-size: 5rem;
   }
 }
 
-/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
 @media screen and (max-width: 1440px) {
   .responsiveFont1 {
-    font-size: 0px;
+    font-size: 3rem;
+    text-align: center;
   }
 }
-      /* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
-      @media screen and (min-width: 601px) {
-        .responsiveFont2 {
-          font-size: 5ch;
-        }
-      }
-      
-      /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
-      @media screen and (max-width: 1440px) {
-        .responsiveFont2 {
-          font-size: 0px;
-        }
-      }
+
+@media screen and (min-width: 601px) {
+  .responsiveFont2 {
+    font-size: 60px;
+  }
+}
+@media screen and (max-width: 1440px) {
+  .responsiveFont2 {
+    font-size: 25px;
+    text-align: center;
+  }
+}
 @media (min-width: 601px) {
   .responsiveBack {
-    // background-color: #e3fae7;
-      // background-image: linear-gradient(to left, rgba(255,0,0,0), #e3fae7);
-background: linear-gradient(90deg, #b5f3bf 0%, #e3fae7 60%, #f1f6f2 80%);
-
+    background-image: url("/assets/Image/sfondo2.jpg");
+    background-size: cover;
+    height: 100vh;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
-    width: 100%;
     overflow-y: hidden;
-    height: 100%;
     overflow: hidden;
   }
 }
 @media (min-width: 300px) and (max-width: 600px) {
   .responsiveBack {
-    background-color: #e3fae7;
+    background-image: url("/assets/Image/sfondo2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+@media (min-width: 601px) {
+  .responsiveDiv1 {
+    background-color: rgb(240, 248, 255, 0.7);
+    text-align: center;
+    border-top-left-radius: 8ch;
+  }
+}
+@media (min-width: 300px) and (max-width: 600px) {
+  .responsiveDiv1 {
+    background-color: transparent;
+  }
+}
+@media (min-width: 601px) {
+  .responsiveDiv2 {
+    background-color: rgb(240, 248, 255, 0.7);
+    border-top-right-radius: 8ch;
+  }
+}
+@media (min-width: 300px) and (max-width: 600px) {
+  .responsiveDiv2 {
+    background-color: transparent;
+  }
+}
+@media (min-width: 601px) {
+  .responsiveImg {
+    width: 40rem;
+  }
+}
+@media (min-width: 300px) and (max-width: 600px) {
+  .responsiveImg {
+    width: 23rem;
   }
 }
 
-
-// .body {
-
-//   overflow:hidden;
-// }
-
-//Font
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
 
 //Animations
@@ -119,7 +143,7 @@ background: linear-gradient(90deg, #b5f3bf 0%, #e3fae7 60%, #f1f6f2 80%);
 }
 
 @keyframes slide-in {
-   0% {
+  0% {
     top: -100px;
   }
   100% {
@@ -128,16 +152,16 @@ background: linear-gradient(90deg, #b5f3bf 0%, #e3fae7 60%, #f1f6f2 80%);
 }
 
 @keyframes scaleDown {
-    0% {
+  0% {
     transform: scale(1);
   }
-   10% {
+  10% {
     transform: scale(0.7);
   }
-   95% {
+  95% {
     transform: scale(0.7);
   }
-   100% {
+  100% {
     transform: scale(1);
   }
 }
@@ -157,17 +181,13 @@ background: linear-gradient(90deg, #b5f3bf 0%, #e3fae7 60%, #f1f6f2 80%);
   }
 }
 
-  .t1 { 
- 
-   
-   position: relative;
-   animation: fade-in 2s ease, slide-in 1s ease;
-   -webkit-animation: fade-in 2s ease, slide-in 1s ease;
-  }
-  .t2 { 
- 
-   
-    position: relative;
-    animation: fade-in 5s ease, slide-in 5s ease;
-    -webkit-animation: fade-in 5s ease, slide-in 5s ease;
-   }
+.t1 {
+  position: relative;
+  animation: fade-in 2s ease, slide-in 1s ease;
+  -webkit-animation: fade-in 2s ease, slide-in 1s ease;
+}
+.t2 {
+  position: relative;
+  animation: fade-in 3s ease, slide-in 3s ease;
+  -webkit-animation: fade-in 3s ease, slide-in 3s ease;
+}

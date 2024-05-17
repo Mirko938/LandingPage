@@ -1,23 +1,25 @@
 tr:hover {
-    background-color: #d2f5d3;
-    
-  }
+  background-color: rgb(240, 248, 255);
+}
 
-  th {
-    background-color: #b5f3bf;
-    font-size: 30px;
-    font-family: 'Times New Roman', Times, serif;
-    
-  }
+th {
+  background-color: rgb(201, 224, 244);
+  font-size: 30px;
+  font-family: "Times New Roman", Times, serif;
+}
 
-  tr {
-    background-color: #ebefeb;
-    font-size: 25px;
-    font-family: 'Times New Roman', Times, serif;
-    border-color: white;
-    border-width: 4px;
-    vertical-align: middle;
-  }
-  .overflow {
-    overflow: hidden!important;
-  }
+tr {
+  background-color: #ebefeb;
+  font-size: 25px;
+  font-family: "Times New Roman", Times, serif;
+  border-color: white;
+  border-width: 4px;
+  vertical-align: middle;
+}
+.overflow {
+  overflow: hidden !important;
+}
+.button {
+  border-radius: 1ch;
+  opacity: 85%;
+}
