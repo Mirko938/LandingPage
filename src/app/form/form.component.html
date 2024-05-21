@@ -1,10 +1,10 @@
 <form
   [formGroup]="checkoutForm"
-  class="t3 pb-5 ps-5"
+  class="t3 pb-5"
   id="form"
   (submit)="onSubmit()"
 >
-  <div class="flex flex-column gap-3 font1 text-left">
+  <div class="flex flex-column gap-3 font1">
     @for (item of items; track item) {
     <span class="font-bold block responsiveFont3">{{ item.label }}</span>
     <input
@@ -22,30 +22,32 @@
         type="checkbox"
         value=""
         id="flexCheckIndeterminate"
-        formControlName="checkedBox"
+        #checkBox
+        (change)="mustBeChecked($event)"
       />
-      <label class="form-check-label ms-3" for="flexCheckIndeterminate"
+      <label class="form-check-label ms-2" for="flexCheckIndeterminate"
         >I agree to the treatment of my personal informations
       </label>
     </div>
     <button
       pButton
       class="button formButton"
+      style="vertical-align: middle"
       data-toggle="modal"
       data-target=".bd-example-modal-lg"
       (click)="subscribe()"
       label="Submit and we contact you!"
       severity="danger"
-      [disabled]="!checkoutForm.valid"
+      [disabled]="isDisabled"
     ></button>
   </div>
 </form>
-
+<!-- modal 1 -->
 <div class="modal" tabindex="-1" role="dialog" id="modal1">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 class="modal-title">Subscription successfully!</h3>
+        <h4 class="modal-title">Subscription successfully!</h4>
         <button
           type="button"
           class="btn btn-danger close"
@@ -57,7 +59,31 @@
         </button>
       </div>
       <div class="modal-body">
-        <h6>We contact you in 24h!</h6>
+        <h6>We contact you in 24h.</h6>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Error -->
+<div class="modal" tabindex="-1" role="dialog" id="modal2">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Error occured!</h3>
+        <button
+          type="button"
+          class="btn btn-danger close"
+          data-dismiss="modal"
+          aria-label="Close"
+          (click)="closeModalError()"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h6>
+          You should insert correct values and check for personal informations!
+        </h6>
       </div>
     </div>
   </div>

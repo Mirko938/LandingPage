@@ -74,15 +74,17 @@ export class LeadComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.getLeads();
+  }
+  getLeads(): void {
     this.leadService.obtainLead().subscribe((response) => {
       this.table = response;
     });
   }
 
   delete(id: number): void {
-    this.ngOnInit();
     this.leadService.deleteLead(id).subscribe();
-    this.ngOnInit();
+    this.getLeads();
   }
 
   leadSelezionato(id: number): void {
@@ -93,12 +95,12 @@ export class LeadComponent implements OnInit {
     this.leadService
       .updateLead(this.idSelezionato, this.leadForm.value)
       .subscribe();
-    this.ngOnInit();
+
     this.leadForm.reset();
     const modal = document.getElementById('modal2');
     if (modal != null) {
       modal.style.display = 'none';
+      this.getLeads();
     }
-    this.ngOnInit();
   }
 }

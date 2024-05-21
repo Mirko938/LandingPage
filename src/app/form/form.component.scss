@@ -1,7 +1,8 @@
 @media (min-width: 601px) {
   .responsiveForm {
     width: 80ch;
-    height: 8ch;
+    height: 6ch;
+    text-align: left;
   }
 }
 @media (min-width: 300px) and (max-width: 600px) {
@@ -18,31 +19,53 @@
 }
 @media (min-height: 300px) and (max-height: 999px) {
   .responsiveForm1 {
-    width: 50%;
+    width: 26rem;
   }
 }
-@media (min-height: 1000px) {
+@media (min-width: 601px) {
   .responsiveFont3 {
-    font-size: 20px;
+    text-align: left;
   }
 }
-
+@media (min-width: 300px) and (max-width: 600px) {
+  .responsiveFont3 {
+    text-align: center;
+  }
+}
 .font1 {
-  font-size: 17px;
-  text-align: center;
+  font-size: 13px;
 }
-.inputForm {
-  border-width: 3px;
-  border-color: #b6bab5;
+@media (min-width: 601px) {
+  .inputForm {
+    border-width: 3px;
+    width: 22rem;
+  }
 }
-
-.formButton {
-  width: 350px;
-  height: 70px;
-  font-size: 130%;
-  background-color: darkblue;
-  border-color: #7f817e;
-  border-width: 4px;
+@media (min-width: 300px) and (max-width: 600px) {
+  .inputForm {
+    border-width: 3px;
+    width: 80%;
+    align-self: center;
+  }
+}
+@media (min-width: 300px) and (max-width: 600px) {
+  .formButton {
+    height: 3rem;
+    font-size: 140%;
+    background-color: darkblue;
+    border-color: #7f817e;
+    border-width: 4px;
+  }
+}
+@media (min-width: 601px) {
+  .formButton {
+    width: 350px;
+    height: 3rem;
+    font-size: 140%;
+    background-color: darkblue;
+    border-color: #7f817e;
+    border-width: 4px;
+  }
 }
 .checkbox {
   font-size: 3rem;
@@ -101,6 +124,6 @@
 
 .t3 {
   position: relative;
-  animation: fade-in 3s ease, slide-in 3s ease;
-  -webkit-animation: fade-in 3s ease, slide-in 3s ease;
+  animation: fade-in 3s ease, slide-in 4s ease;
+  -webkit-animation: fade-in 3s ease, slide-in 4s ease;
 }

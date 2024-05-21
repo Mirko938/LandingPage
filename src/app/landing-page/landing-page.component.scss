@@ -2,14 +2,20 @@
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
 }
 
-@media (min-height: 600px) {
+@media (min-width: 300px) and (max-width: 600px) {
   .responsiveList {
-    gap: 2vh;
+    gap: 0.5vh;
+    text-align: center;
+  }
+}
+@media (min-width: 601px) {
+  .responsiveList {
+    gap: 1vh;
   }
 }
 
 .logo {
-  max-height: 8rem;
+  max-height: 5rem;
   vertical-align: middle;
 }
 .logo1 {
@@ -18,7 +24,6 @@
 
 .font1 {
   font-family: "fantasy";
-  font-size: 100px;
 }
 .font2 {
   font-family: "fantasy";
@@ -28,7 +33,7 @@
 
 .font3 {
   font-family: "fantasy";
-  font-size: 35px;
+  font-size: 25px;
 }
 .font4 {
   font-family: "fantasy";
@@ -36,11 +41,11 @@
 }
 .font6 {
   font-family: "fantasy";
-  font-size: 20px;
+  font-size: 15px;
 }
 .font7 {
   font-family: "fantasy";
-  font-size: 35px;
+  font-size: 25px;
 }
 
 .list {
@@ -51,25 +56,25 @@
   border-bottom: none !important;
   background-image: none;
   background-color: transparent;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 @media screen and (min-width: 601px) {
   .responsiveFont1 {
-    font-size: 5rem;
+    font-size: 3.8rem;
   }
 }
 
 @media screen and (max-width: 1440px) {
   .responsiveFont1 {
-    font-size: 3rem;
+    font-size: 2rem;
     text-align: center;
   }
 }
 
 @media screen and (min-width: 601px) {
   .responsiveFont2 {
-    font-size: 60px;
+    font-size: 40px;
   }
 }
 @media screen and (max-width: 1440px) {
@@ -100,33 +105,52 @@
   .responsiveDiv1 {
     background-color: rgb(240, 248, 255, 0.7);
     text-align: center;
-    border-top-left-radius: 8ch;
   }
 }
 @media (min-width: 300px) and (max-width: 600px) {
   .responsiveDiv1 {
     background-color: transparent;
+    text-align: center;
   }
 }
 @media (min-width: 601px) {
   .responsiveDiv2 {
     background-color: rgb(240, 248, 255, 0.7);
     border-top-right-radius: 8ch;
+    text-align: left;
   }
 }
 @media (min-width: 300px) and (max-width: 600px) {
   .responsiveDiv2 {
     background-color: transparent;
+    text-align: center;
+  }
+}
+
+@media (min-width: 601px) {
+  .responsiveDiv3 {
+    background-color: rgb(240, 248, 255, 0.7);
+    border-top-left-radius: 8ch;
+  }
+}
+@media (min-width: 300px) and (max-width: 600px) {
+  .responsiveDiv3 {
+    background-color: transparent;
+    text-align: center;
   }
 }
 @media (min-width: 601px) {
   .responsiveImg {
-    width: 40rem;
+    width: 27rem;
+    border-radius: 5ch;
+    opacity: 75%;
   }
 }
 @media (min-width: 300px) and (max-width: 600px) {
   .responsiveImg {
-    width: 23rem;
+    width: 100%;
+    border-radius: 5ch;
+    opacity: 75%;
   }
 }
 
