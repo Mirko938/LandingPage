@@ -85,7 +85,7 @@
 }
 @media (min-width: 601px) {
   .responsiveBack {
-    background-image: url("/assets/Image/sfondo2.jpg");
+    background-image: url("../../assets/Image/sfondo2.jpg");
     background-size: cover;
     height: 100vh;
     background-repeat: no-repeat;
@@ -96,7 +96,7 @@
 }
 @media (min-width: 300px) and (max-width: 600px) {
   .responsiveBack {
-    background-image: url("/assets/Image/sfondo2.jpg");
+    background-image: url("../../assets/Image/sfondo2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
   }
