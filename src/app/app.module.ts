@@ -19,7 +19,6 @@ import { CarouselModule } from 'primeng/carousel';
 import { HeaderComponent } from './header/header.component';
 import { CommonModule, NgFor } from '@angular/common';
 
-
 @NgModule({
   declarations: [AppComponent],
   imports: [

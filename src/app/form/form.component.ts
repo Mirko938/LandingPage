@@ -1,4 +1,13 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  Renderer2,
+  ViewChild,
+} from '@angular/core';
 import {
   AbstractControl,
   FormBuilder,
@@ -16,12 +25,6 @@ import { Figlio } from '../Interface/figlio';
 import { Form } from '../Interface/form';
 import { CommonModule } from '@angular/common';
 
-function mustBecheckedValidator(): ValidatorFn {
-  return (control: AbstractControl): { [key:string]: any } | null => {
-    return control.value ? null : { notChecked: { value: control.value }};
-  };
-}
-
 @Component({
   selector: 'app-form',
   standalone: true,
@@ -35,8 +38,6 @@ function mustBecheckedValidator(): ValidatorFn {
   templateUrl: './form.component.html',
   styleUrl: './form.component.scss',
 })
-
-
 export class FormComponent implements OnInit {
   @Input()
   figlio!: Figlio;
@@ -46,23 +47,14 @@ export class FormComponent implements OnInit {
 
   submittedValue: any;
 
-  checkoutForm: FormGroup = this.ciccioBuilder.group({
+  checkoutForm: FormGroup = this.formConstructor.group({
     nome: new FormControl(null, [Validators.required, Validators.minLength(5)]),
     telefono: new FormControl(null, [
       Validators.required,
       Validators.minLength(10),
     ]),
     email: new FormControl(null, [Validators.required, Validators.email]),
-    checkedBox: new FormControl(false, mustBecheckedValidator()),
-    // 'api-key-mc':
-    //   '0GkdEpGLdCzMwiBMcx7sL3jdEMGVocS1ebxtteMy1LS1J7PHse4IdEdUUX8TUueg',
-    // sezione: 'Lavora con noi',
-    // figlio: {
-    //   nome: 'Luigi',
-
-    // }
   });
-
 
   items: Form[] = [
     {
@@ -81,24 +73,40 @@ export class FormComponent implements OnInit {
       control: 'email',
     },
   ];
-
+  isDisabled: boolean = true;
   constructor(
-    private ciccioBuilder: FormBuilder,
-    private ciccioService: FormServiceService
-  ) {
-    console.log('Costruttore!');
-  }
+    private formConstructor: FormBuilder,
+    private formService: FormServiceService,
+    private renderer: Renderer2
+  ) {}
+
+  @ViewChild('checkBox') mySelectBox!: ElementRef;
+
+  @ViewChild('formBtn') myFormBtn!: ElementRef;
 
   ngOnInit(): void {
-    console.log('Ciao a padre!');
     this.infoOutput.emit('Ciao padre!');
   }
+
+  mustBeChecked(event: Event) {
+    if (this.checkoutForm.valid && this.mySelectBox.nativeElement.checked) {
+      this.isDisabled = false;
+    } else {
+      this.isDisabled = true;
+    }
+  }
+
   subscribe(): void {
-    this.ciccioService.insertLead(this.checkoutForm.value).subscribe();
-    this.checkoutForm.reset();
     const modal = document.getElementById('modal1');
-    if (modal != null) {
+    const modalError = document.getElementById('modal2');
+    if (modal != null && this.checkoutForm.valid) {
+      this.formService.insertLead(this.checkoutForm.value).subscribe();
+      this.checkoutForm.reset();
       modal.style.display = 'block';
+    } else {
+      if (modalError != null) {
+        modalError.style.display = 'block';
+      }
     }
   }
   closeModal(): void {
@@ -107,7 +115,14 @@ export class FormComponent implements OnInit {
       modal.style.display = 'none';
     }
   }
+
+  closeModalError(): void {
+    const modalError = document.getElementById('modal2');
+    if (modalError != null) {
+      modalError.style.display = 'none';
+    }
+  }
   onSubmit() {
-    this.submittedValue.value = this.checkoutForm.value
+    this.submittedValue.value = this.checkoutForm.value;
   }
 }

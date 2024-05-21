@@ -3,23 +3,22 @@ import { ButtonModule } from 'primeng/button';
 import { ToolbarModule } from 'primeng/toolbar';
 import { PrimeNGConfig } from 'primeng/api';
 import { CommonModule } from '@angular/common';
-
+import { Router, RouterModule, NavigationExtras } from '@angular/router';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [ToolbarModule, ButtonModule, CommonModule],
+  imports: [ToolbarModule, ButtonModule, CommonModule, RouterModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent implements OnInit {
-  constructor(private primengConfig: PrimeNGConfig) {}
+  url: any[] = ['./landing-page'];
+  constructor(private primengConfig: PrimeNGConfig, private router: Router) {}
   ngOnInit(): void {
     this.primengConfig.ripple = true;
   }
-  toLead(): void {
-    location.href = 'http://localhost:4200/lead';
-  }
+
   toHome(): void {
-    location.href = 'http://localhost:4200/landing-page';
+    this.router.navigate(this.url);
   }
 }

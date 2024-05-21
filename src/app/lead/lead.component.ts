@@ -74,36 +74,33 @@ export class LeadComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.getLeads();
+  }
+  getLeads(): void {
     this.leadService.obtainLead().subscribe((response) => {
       this.table = response;
-      console.log(this.table);
     });
   }
 
   delete(id: number): void {
-    this.ngOnInit();
     this.leadService.deleteLead(id).subscribe();
-    this.ngOnInit();
+    this.getLeads();
   }
 
   leadSelezionato(id: number): void {
-    console.log(id);
     this.idSelezionato = id;
-    console.log(this.idSelezionato);
   }
 
   update(): void {
-    console.log(this.idSelezionato);
-    console.log(this.leadForm.value);
     this.leadService
       .updateLead(this.idSelezionato, this.leadForm.value)
       .subscribe();
-    this.ngOnInit();
+
     this.leadForm.reset();
     const modal = document.getElementById('modal2');
     if (modal != null) {
       modal.style.display = 'none';
+      this.getLeads();
     }
-    this.ngOnInit();
   }
 }
