@@ -2,6 +2,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { LeadComponent } from './lead/lead.component'
 import { NgModule } from '@angular/core';
+import { HeaderComponent } from './header/header.component'
 
 const routes: Routes = [{
 
@@ -13,6 +14,10 @@ const routes: Routes = [{
     component: LeadComponent
 },
 
+{  path: 'langind-page/lead',
+    component: HeaderComponent
+
+},
 
 
 { // caso di path che non esiste
