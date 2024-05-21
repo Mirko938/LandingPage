@@ -1,0 +1,17 @@
+<p-galleria
+  style="border-radius: 5ch"
+  [value]="image"
+  [numVisible]="3"
+  [circular]="true"
+  [showItemNavigators]="true"
+  [showThumbnails]="false"
+  [containerStyle]="{
+    'max-width': '100%',
+    'max-height': '640px',
+    'border-radius': '5ch'
+  }"
+>
+  <ng-template pTemplate="item" let-image>
+    <img [src]="image.indirizzo" style="width: 100%; display: block" />
+  </ng-template>
+</p-galleria>
